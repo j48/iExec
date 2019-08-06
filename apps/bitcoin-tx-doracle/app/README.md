@@ -17,12 +17,12 @@ Usage
 
 Smart Contract
 -----
-stores Bitcoin transaction hash as ID(bytes32) along with iExec oracle call ID(bytes32) with transfer amount in sats (last 27 bytes) and transaction timestamp in unix time (first 5 bytes) as a packed bytes32
+stores Bitcoin transaction hash as ID(bytes32) along with iExec oracle call ID(bytes32) with transfer amount in sats(last 27 bytes) and transaction timestamp in unix time(first 5 bytes) as a packed bytes32
 
 creates transaction Receipt Event Log of TxUpdated with values txHash, oracleCallID, amount, timestamp
 
 to access packed stored values for transaction use mapping function txData(bytes32 Bitcoin transaction hash)
-to access unpacked stored values for transaction use mapping function getTxAmount(bytes32 Bitcoin transaction hash)
+to access unpacked stored values for transaction use function getTxAmount(bytes32 Bitcoin transaction hash)
 
 `txData(0xb6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da)`
 
