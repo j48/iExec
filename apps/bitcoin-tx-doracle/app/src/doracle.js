@@ -156,16 +156,16 @@ new Promise(async (resolve, reject) => {
 
     // data to send to smart contract from api results 
     // unique hex or string based on details used for lookup
-    let apiDataID = {value: details, size: 32, type: 'bytes32'};
+    let apiDataID = {name: 'hash', value: details, size: 32, type: 'bytes32'};
 
     // max 32 bytes between all values if packing (when converted to hex)
     // in this case only totalAmount/timestamp is needed
     let apiDataArray = [
-    {value: totalAmount, size: 27, type: 'uint256'},
-    {value: timestamp, size: 5, type: 'uint256'}
+    {name: 'amount', value: totalAmount, size: 27, type: 'uint256'},
+    {name: 'timestamp', value: timestamp, size: 5, type: 'uint256'}
     ];
 
-    console.log(`- API data ID: ${apiDataID.value}`);
+    console.log(`- API data ID: ${JSON.stringify(apiDataID)}`);
     console.log(`- API data: ${JSON.stringify(apiDataArray)}`);
 
     // encode data to send to smart contract
